@@ -198,7 +198,7 @@ runs:
         if [[ "${{ inputs.join }}" == "true" ]]; then
           command="$command local join "
         else
-          command="$command local run "
+          command="$command local run -vvvv "
         fi
 
         command="$command --count ${{ inputs.node-count }} "
@@ -222,7 +222,7 @@ runs:
         if ("${{ inputs.join }}" -eq "true") {
           $command += "local join "
         } else {
-          $command += "local run "
+          $command += "local run -vvvv "
         }
 
         $command += "--count ${{ inputs.node-count }} "
